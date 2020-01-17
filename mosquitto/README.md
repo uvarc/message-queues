@@ -2,6 +2,8 @@
 
 MQTT protocol
 
+Download the `mosquitto_pub` and `mosquitto_sub` tools from https://mosquitto.org/.
+
 Using the https://test.mosquitto.org/ site:
 
 ## Publish / Send
