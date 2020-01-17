@@ -10,3 +10,23 @@
 * Get 1 message (with attributes) - [`get-sqs.py`](get-sqs.py)
 
 ## Command Line
+
+### Simple Message with Body
+
+    aws sqs send-message \
+      --queue-url https://sqs.us-east-1.amazonaws.com/474683445819/learn-sqs \
+      --message-body "blah blah blah" \
+
+    aws sqs receive-message \
+      --queue-url https://sqs.us-east-1.amazonaws.com/474683445819/learn-sqs
+
+### Message with Attributes
+
+    aws sqs send-message \
+      --queue-url https://sqs.us-east-1.amazonaws.com/474683445819/learn-sqs \
+      --message-body "blah blah blah" \
+      --message-attributes '{"firstAttribute":{"DataType":"String","StringValue":"hello world"},"secondAttribute":{"DataType":"String","StringValue":"goodbye world"}}'
+
+    aws sqs receive-message \
+      --queue-url https://sqs.us-east-1.amazonaws.com/474683445819/learn-sqs \
+      --attribute-names "All"
